@@ -1,0 +1,70 @@
+#Site settings
+title: PVP Hero Blog
+description: All external communication from PVP Hero Team will be posted here.
+mode: dark # default theme "dark" | "light"
+lang: en-US # default lang
+branding:
+  name: PVP Hero
+  summary: Welcome to the official PVP Hero blog! We're dedicated to providing the community with the latest news, updates, and developer insight; stay tuned, because exciting things are happening behind the scenes and we can't wait to share them with you!
+  logo: /assets/img/logo.png
+encoding: utf-8
+
+# URL settings
+baseurl:
+url: "https://blog.neox.ps"
+permalink: /:title/
+
+# Collection setting
+collections:
+  posts:
+    output: true
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: false
+
+# Jekyll Compose default front matter
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+# Homepage limit posts
+number_of_posts: 5
+
+# Build settings
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - pvphero-*.gem
+  - pvphero.gemspec
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-postfiles
